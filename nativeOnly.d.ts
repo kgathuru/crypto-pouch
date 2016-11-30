@@ -6,7 +6,7 @@ declare namespace PouchDB {
   }
 }
 
-declare module 'crypto-pouch' {
+declare module 'crypto-pouch/nativeOnly' {
     const plugin: PouchDB.Plugin;
     export = plugin;
 }
