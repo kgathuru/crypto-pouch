@@ -42,12 +42,12 @@ If you want to use it in the browser, download [the browserified version from wz
 <script src="pouchdb.crypto-pouch.js"></script>
 ```
 
-By default `crypto-pouch` depends on the chacha library, which is a compiled binary in node.  If you don't
-have need for backwards-compatibility then you can import the library with only built-in crypto support.
+By default `crypto-pouch` depends on the chacha library, which uses native bindings in node.  If you don't
+have need for backwards-compatibility then you can import the library without it:
 
 ```js
 var PouchDB = require('pouchdb')
-PouchDB.plugin(require('crypto-pouch/nativeOnly'))
+PouchDB.plugin(require('crypto-pouch/forward'))
 ```
 
 API
