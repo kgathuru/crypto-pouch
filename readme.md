@@ -22,10 +22,17 @@ This only encrypts the contents of documents, NOT THE ID (or rev).  So if you ha
 Usage
 -------
 
-This plugin is hosted on npm. To use in Node.js:
+This plugin is hosted on npm. To use in Node.js, first install:
 
 ```bash
 npm install crypto-pouch
+```
+
+Then install the plugin:
+
+```js
+var PouchDB = require('pouchdb')
+PouchDB.plugin(require('crypto-pouch'))
 ```
 
 If you want to use it in the browser, download [the browserified version from wzrd.in](http://wzrd.in/standalone/crypto-pouch) and then include it after `pouchdb`:
@@ -33,6 +40,14 @@ If you want to use it in the browser, download [the browserified version from wz
 ```html
 <script src="pouchdb.js"></script>
 <script src="pouchdb.crypto-pouch.js"></script>
+```
+
+By default `crypto-pouch` depends on the chacha library, which is a compiled binary in node.  If you don't
+have need for backwards-compatibility then you can import the library with only built-in crypto support.
+
+```js
+var PouchDB = require('pouchdb')
+PouchDB.plugin(require('crypto-pouch/nativeOnly'))
 ```
 
 API
@@ -63,6 +78,8 @@ If the second argument is an object:
 ### db.removeCrypto()
 
 Disables encryption on the database and randomizes the key buffer.
+
+Note: a [Typescript](https://www.typescriptlang.org) definition file is provided
 
 Details
 ===
