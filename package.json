@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/calvinmetcalf/crypto-pouch",
   "dependencies": {
-    "chacha": "^2.1.0",
     "@types/pouchdb": "^5.4.28",
     "native-crypto": "^1.5.2",
     "node-uuid": "^1.4.3",
@@ -39,5 +38,8 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
     "uglify-js": "^2.6.2"
+  },
+  "optionalDependencies": {
+    "chacha": "^2.1.0"
   }
 }
