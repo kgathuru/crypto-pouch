@@ -125,7 +125,7 @@ function cryptoInit(password, options) {
     }
   }
   function encrypt(doc) {
-    var nonce = crypto.randomBytes(12)
+    var nonce = randomBytes(12)
     var outDoc = {
       nonce: nonce.toString('hex')
     };
@@ -167,7 +167,7 @@ function cryptoInit(password, options) {
 
 function randomize(buf) {
   var len = buf.length;
-  var data = crypto.randomBytes(len);
+  var data = randomBytes(len);
   var i = -1;
   while (++i < len) {
     buf[i] = data[i];
